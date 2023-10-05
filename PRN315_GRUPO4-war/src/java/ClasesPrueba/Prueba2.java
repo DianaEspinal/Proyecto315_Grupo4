@@ -21,6 +21,7 @@ public class Prueba2 {
         System.out.println("Prueba #4 Alexander");
         System.out.println("Prueba #5 Alexander");
         System.out.println("Prueba #6 Miguel");
+        System.out.println("Prueba #7 Miguel");
        
     }
     
