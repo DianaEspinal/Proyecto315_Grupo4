@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../Formulario/PlantillaGrupo4.xhtml">
+
+            <ui:define name="top">
+
+                <h:form id="principal">
+                    
+                    <div align="center">
+                        <p:linkButton value="Agregar Cliente" href="create.xhtml"/>
+                              <br /><br />
+                              <p:growl id ="growl"/>
+                              <p:dataTable var="Cliente" value="#{clienteForm.clientes}" paginator="true" rows="7">
+                                  <p:column>
+                                      <f:facet name="header">
+                                          <h:outputText value="Id"/>
+                                      </f:facet>
+                                      <h:outputText value="##{Cliente.clienteId}"/>
+                                  </p:column>
+                                  <p:column>
+                                      <f:facet name="header">
+                                          <h:outputText value="Nombre"/>
+                                      </f:facet>
+                                      <h:outputText value="#{Cliente.nombres}"/>
+                                  </p:column>
+                                   <p:column>
+                                      <f:facet name="header">
+                                          <h:outputText value="Apellidos"/>
+                                      </f:facet>
+                                       <h:outputText value="#{Cliente.apellidos}"/>
+                                  </p:column>
+                                  <p:column>
+                                      <f:facet name="header">
+                                          <h:outputText value="Identificación"/>
+                                      </f:facet>
+                                      <h:outputText value="#{Cliente.identificacion}"/>
+                                  </p:column>
+                                   <p:column>
+                                      <f:facet name="header">
+                                          <h:outputText value="Correo"/>
+                                      </f:facet>
+                                       <h:outputText value="#{Cliente.correoElectronico}"/>
+                                  </p:column>
+                                   <p:column>
+                                      <f:facet name="header">
+                                          <h:outputText value="Numero telefonico"/>
+                                      </f:facet>
+                                       <h:outputText value="#{Cliente.numeroTelefonico}"/>
+                                  </p:column>
+                                  <p:column>
+                                  <f:facet  name="header">
+                                       <h:outputText value="Acciones"/>
+                                  </f:facet>
+                                  <p:linkButton value="Editar" outcome="edit">
+                                      <f:param name="cliente_id" value="#{Cliente.clienteId}"/>
+                                  </p:linkButton>
+                                  <p:linkButton value="Eliminar" outcome="delete">
+                                      <f:param name="cliente_id" value="#{Cliente.clienteId}"/>
+                                  </p:linkButton>
+                                  </p:column>
+                              </p:dataTable>
+                    </div>
+                    
+                </h:form>
+            </ui:define>
+
+            <ui:define name="content">
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

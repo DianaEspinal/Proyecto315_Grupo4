@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+        <h:form id="form">
+            <p:megaMenu orientation="horizontal" autoDisplay="false" style="margin-top:20px">
+                 <p:menuitem value="Inicio" url="http://localhost:8080/PRN315_GRUPO4-war/" />
+                <p:submenu label="Proyecto grupo 4" icon="pi pi-check" >
+                    <p:column>
+                <p:submenu label="Mantenimientos">
+                    <p:menuitem value="Mantenimiento 1" url="http://localhost:8080/PRN315_GRUPO4-war/faces/newTemplateClient.xhtml" />
+                    <p:menuitem value="Mantenimiento 2" url="#" />
+                </p:submenu>
+                    </p:column>
+                    <p:column>
+                <p:submenu label="Formularios">
+                    <p:menuitem value="Formulario 1" url="#" />
+                    <p:menuitem value="Formulario 2" url="#" />
+                </p:submenu>
+                    </p:column>
+                    </p:submenu>
+            </p:megaMenu>
+        </h:form>
+    <h:body>
+
+        <div id="top" class="top" align="center">
+            <ui:insert name="top">Proyecto de Programación III </ui:insert>
+        </div>
+
+
+    </h:body>
+
+</html>

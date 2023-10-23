@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:body>
+    <p:layout>
+              <h:form>
+                <p:panel header="Agregar Cliente">
+                    <p:panelGrid columns="5" layout="grid">
+                        <p:outputLabel for="cliente-title" value="Nombres:"/>
+                        <p:inputText id="cliente-title" value="#{clienteForm.cliente.nombres}"/>
+                        <p:outputLabel for="cliente-apellidos" value="Apellidos:"/>
+                        <p:inputText id="cliente-apellidos" value="#{clienteForm.cliente.apellidos}"/>
+                        <p:outputLabel for="cliente-identificacion" value="Identificacion:"/>
+                        <p:inputNumber id="cliente-identificacion" 
+                                       decimalPlaces="0"
+                                       value="#{clienteForm.cliente.identificacion}"/>
+                        <p:outputLabel for="cliente-correo" value="Correo electronico:"/>
+                        <p:inputText id="cliente-correo" value="#{clienteForm.cliente.correoElectronico}"/>
+                        <p:outputLabel for="cliente-numero" value="Numero telefonico:"/>
+                        <p:inputNumber id="cliente-numero" 
+                                       decimalPlaces="0"
+                                       value="#{clienteForm.cliente.numeroTelefonico}"/>
+                        <p:commandButton value="Agregar" action="#{clienteForm.create}" ajax="false"/>
+                        <p:linkButton value="Cancelar" href="index.xhtml"/>
+                    </p:panelGrid>
+                </p:panel>
+            </h:form>
+        </p:layout>
+        </h:body>
+</html>
