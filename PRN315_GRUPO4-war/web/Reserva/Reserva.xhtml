@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <ui:composition template="./../Formulario/PlantillaGrupo4.xhtml">
+
+        <ui:define name="top">
+<h:head>
+    <title>Gestión de Reservas</title>
+</h:head>
+<h:body>
+    <h:form id="reservaForm">
+
+        <!-- Encabezado de la página -->
+        <h3>Gestión de Reservas</h3>
+
+        <!-- Campos para ingresar información de la reserva -->
+        <p:inputText id="fechaEntrada" value="#{reservaForm.reserva.fechaEntrada}" placeholder="Fecha de Entrada" />
+        <p:inputText id="fechaSalida" value="#{reservaForm.reserva.fechaSalida}" placeholder="Fecha de Salida" />
+        <p:inputText id="montoTotalReserva" value="#{reservaForm.reserva.montoTotalReserva}" placeholder="Monto Total de Reserva" />
+        <p:inputText id="codigoDescuento" value="#{reservaForm.reserva.codigoDescuento}" placeholder="Código de Descuento" />
+        <p:inputText id="tipoPago" value="#{reservaForm.reserva.tipoPago}" placeholder="Tipo de Pago" />
+
+        <!-- Botón para crear una nueva reserva -->
+        <p:commandButton value="Crear Reserva" action="#{reservaForm.crearReserva}" update="reservaTable" />
+
+        <!-- Tabla para mostrar la lista de reservas -->
+        <p:dataTable id="reservaTable" value="#{reservaForm.obtenerReservas()}" var="reserva" >
+            <p:column headerText="Fecha de Entrada">
+                <h:outputText value="#{reserva.fechaEntrada}" />
+            </p:column>
+            <p:column headerText="Fecha de Salida">
+                <h:outputText value="#{reserva.fechaSalida}" />
+            </p:column>
+            <p:column headerText="Monto Total de Reserva">
+                <h:outputText value="#{reserva.montoTotalReserva}" />
+            </p:column>
+            <p:column headerText="Código de Descuento">
+                <h:outputText value="#{reserva.codigoDescuento}" />
+            </p:column>
+            <p:column headerText="Tipo de Pago">
+                <h:outputText value="#{reserva.tipoPago}" />
+            </p:column>
+            <p:column headerText="Acciones">
+                <p:commandButton value="Editar" action="#{reservaForm.actualizarReserva(reserva)}" />
+                <p:commandButton value="Eliminar" action="#{reservaForm.eliminarReserva(reserva)}" update="reservaTable" />
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</h:body>
+            </ui:define>
+        </ui:composition>
+</html>
