@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                Header
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" resizable="true" closable="true" collapsible="true">
+                Footer
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
+                 <h:form>
+                <p:menu>
+                    <p:submenu label="Cliente">
+                        <p:menuitem value="Mantenimiento" outcome="/Cliente/indexCliente" />
+                         </p:submenu>
+                          <p:submenu label="Alojamiento">
+                        <p:menuitem value="Mantenimiento" />
+                         </p:submenu>
+                         <p:submenu label="Actividad Turistica">
+                        <p:menuitem value="Mantenimiento" />
+                         </p:submenu>
+                         <p:submenu label="Destino Turistico">
+                        <p:menuitem value="Mantenimiento" />
+                         </p:submenu>
+                         <p:submenu label="Reserva">
+                        <p:menuitem value="Mantenimiento" />
+                         </p:submenu>
+                         <p:submenu label="Usuarios">
+                        <p:menuitem value="Mantenimiento" />
+                    </p:submenu>
+                </p:menu>
+                      </h:form>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
+              <h:form>
+                    <p:panel header="Editar Registro">
+                        <p:panelGrid columns="2" layout="grid">
+                            <p:outputLabel for="Cliente-title" value="Nombres:"/>
+                            <p:inputText 
+                                id="Cliente-title" 
+                                value="#{clienteBean.cliente.nombres}" />
+                             <p:outputLabel for="Cliente-apellidos" value="Apellidos:"/>
+                            <p:inputText 
+                                id="Cliente-apellidos" 
+                                value="#{clienteBean.cliente.apellidos}" />
+                             <p:outputLabel for="Cliente-identificacion" value="Identificacion:"/>
+                            <p:inputNumber 
+                                id="Cliente-identificacion" 
+                                decimalPlaces="0" 
+                                value="#{clienteBean.cliente.identificacion}" />
+                            <p:outputLabel for="Cliente-correo" value="Correo electronico"/>
+                            <p:inputText 
+                                id="Cliente-correo" 
+                                value="#{clienteBean.cliente.correoElectronico}" />
+                            <p:outputLabel for="Cliente-numero" value="Numero telefonico"/>
+                             <p:inputNumber 
+                                id="Cliente-numero" 
+                                decimalPlaces="0" 
+                                value="#{clienteBean.cliente.numeroTelefonico}" />
+                            <p:commandButton value="Editar" 
+                                             action="#{clienteBean.edit}" ajax="false"/>
+                            <p:linkButton value="Cancelar" href="indexCliente.xhtml" />
+                            <p:inputText type="hidden" value="#{clienteBean.cliente.clienteId}" />
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+
+             </p:layoutUnit>
+           </p:layout>
+  </h:body>
+</html>
