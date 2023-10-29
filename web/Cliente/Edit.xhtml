@@ -52,7 +52,7 @@ and open the template in the editor.
             <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
               <h:form>
                     <p:panel header="Editar Registro">
-                        <p:panelGrid columns="2" layout="grid">
+                        <p:panelGrid columns="5" layout="grid">
                             <p:outputLabel for="Cliente-title" value="Nombres:"/>
                             <p:inputText 
                                 id="Cliente-title" 
@@ -75,7 +75,7 @@ and open the template in the editor.
                                 id="Cliente-numero" 
                                 decimalPlaces="0" 
                                 value="#{clienteBean.cliente.numeroTelefonico}" />
-                            <p:commandButton value="Editar" 
+                            <p:commandButton value="Guardar Modificaciones" 
                                              action="#{clienteBean.edit}" ajax="false"/>
                             <p:linkButton value="Cancelar" href="indexCliente.xhtml" />
                             <p:inputText type="hidden" value="#{clienteBean.cliente.clienteId}" />
