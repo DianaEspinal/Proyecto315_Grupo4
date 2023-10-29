@@ -10,8 +10,8 @@ package Beans;
  * @author Miguel Hernández
  */
 
-import Entidades.Cliente;
-import Ejb.ClienteFacadeLocal;
+import Entidades.ActividadTuristica;
+import Ejb.ActividadTuristicaFacadeLocal;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -21,74 +21,73 @@ import javax.faces.context.FacesContext;
 import javax.faces.application.FacesMessage;
 
 @ManagedBean
-public class ClienteBean {
+public class ActividadTuristicaBean {
     
     @Inject
-    private ClienteFacadeLocal clienteFacadeLocal;
-    private Cliente cliente;
-    private List<Cliente> clientes;
+    private ActividadTuristicaFacadeLocal actividadTuristicaFacadeLocal;
+    private ActividadTuristica actividadTuristica;
+    private List<ActividadTuristica> actividadesTuristicas;
     
-
     @PostConstruct
     public void init() {
         // inicializamos 
-        cliente = new Cliente();
+        actividadTuristica = new ActividadTuristica();
         
-        // si estamos editando obtenemos el etiquetaId
-        String clienteIdParam = FacesContext.getCurrentInstance()
-                .getExternalContext().getRequestParameterMap().get("cliente_id");
-        if (clienteIdParam != null) {
-            Long clienteId = Long.parseLong(clienteIdParam);
-            cliente = clienteFacadeLocal.find(clienteId);
+        String actividadTuristicaIdParam = FacesContext.getCurrentInstance()
+                .getExternalContext().getRequestParameterMap().get("actividadTuristica_id");
+        if (actividadTuristicaIdParam != null) {
+            Long actividadTuristicaId = Long.parseLong(actividadTuristicaIdParam);
+            actividadTuristica = actividadTuristicaFacadeLocal.find(actividadTuristicaId);
         }
         
-        this.clientes = clienteFacadeLocal.findAll();
+        this.actividadesTuristicas = actividadTuristicaFacadeLocal.findAll();
     }
     
     // Permite crear un registro
     public void create() throws IOException {
-        clienteFacadeLocal.create(cliente);
+        actividadTuristicaFacadeLocal.create(actividadTuristica);
         FacesContext.getCurrentInstance()
                 .getExternalContext().getFlash().setKeepMessages(true);
         FacesContext.getCurrentInstance()
                 .addMessage(null, new FacesMessage("Registro creado."));
         FacesContext.getCurrentInstance()
-                .getExternalContext().redirect("indexCliente.xhtml");
+                .getExternalContext().redirect("IndexActividadTuristica.xhtml");
     }
     
     // Permite editar un registro
     public void edit() throws IOException {
-        clienteFacadeLocal.edit(cliente);
+        actividadTuristicaFacadeLocal.edit(actividadTuristica);
         FacesContext.getCurrentInstance()
                 .getExternalContext().getFlash().setKeepMessages(true);
         FacesContext.getCurrentInstance()
                 .addMessage(null, new FacesMessage("Registro actualizado."));
         FacesContext.getCurrentInstance()
-                .getExternalContext().redirect("indexCliente.xhtml");
+                .getExternalContext().redirect("IndexActividadTuristica.xhtml");
     }
     
     // Permite borrar un registro
     public void delete() throws IOException {
-        clienteFacadeLocal.remove(cliente);
+        actividadTuristicaFacadeLocal.remove(actividadTuristica);
         FacesContext.getCurrentInstance()
                 .getExternalContext().getFlash().setKeepMessages(true);
         FacesContext.getCurrentInstance()
                 .addMessage(null, new FacesMessage("Registro eliminado."));
         FacesContext.getCurrentInstance()
-                .getExternalContext().redirect("indexCliente.xhtml");
+                .getExternalContext().redirect("IndexActividadTuristica.xhtml");
     }
 
     /**
      * @return 
      */
-    public List<Cliente> getClientes() {
-        return clientes;
+    public List<ActividadTuristica> getActividadesTuristicas() {
+        return actividadesTuristicas;
     }
 
     /**
      * @return 
      */
-    public Cliente getCliente() {
-        return cliente;
+    public ActividadTuristica getActividadTuristica() {
+        return actividadTuristica;
     }
+    
 }

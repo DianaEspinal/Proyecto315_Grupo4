@@ -20,7 +20,7 @@ and open the template in the editor.
                 SISTEMA DE GESTION DE RESERVA DE PAQUETES TURISTICOS
             </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="100" resizable="true" closable="true" collapsible="true">
+            <p:layoutUnit position="south" size="100" resizable="true" closable="true" collapsible="true" >
                 Footer
             </p:layoutUnit>
 
@@ -51,39 +51,30 @@ and open the template in the editor.
             
             <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
              <h:form>
-                <p:panel header="Agregar Cliente">
+                <p:panel header="Agregar Actividad Turistica">
+                    
                     <p:panelGrid columns="1" layout="grid">
-                        <p:outputLabel for="Cliente-title" value="Nombres:"/>
-                        <p:inputText id="Cliente-title" value="#{clienteBean.cliente.nombres}"/>
+                        <p:outputLabel for="actividadTuristica-title" value="Nombre de Actividad: "/>
+                        <p:inputText id="actividadTuristica-title" value="#{actividadTuristicaBean.actividadTuristica.nombreActividad}" />
                         
-                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+
+                        <p:outputLabel for="actividadTuristica-descripcion" value="Descripción: "/>
+                        <p:inputText id="actividadTuristica-descripcion" value="#{actividadTuristicaBean.actividadTuristica.descripcion}" />
                         
-                        <p:outputLabel for="Cliente-apellidos" value="Apellidos:"/>
-                        <p:inputText id="Cliente-apellidos" value="#{clienteBean.cliente.apellidos}"/>
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+
+                        <p:outputLabel for="actividadTuristica-precio" value="Precio de la actividad: "/>
+                        <p:inputNumber id="actividadTuristica-precio"  decimalPlaces="0" value="#{actividadTuristicaBean.actividadTuristica.precio}" />
                         
-                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-                        
-                        <p:outputLabel for="Cliente-identificacion" value="Identificacion:"/>
-                        <p:inputNumber id="Cliente-identificacion"  decimalPlaces="0" value="#{clienteBean.cliente.identificacion}"/>
-                        
-                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-                        
-                        <p:outputLabel for="Cliente-correo" value="Correo electronico:"/>
-                        <p:inputText id="Cliente-correo" value="#{clienteBean.cliente.correoElectronico}"/>
-                        
-                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-                        
-                        <p:outputLabel for="Cliente-numero" value="Numero telefonico:"/>
-                        <p:inputNumber id="Cliente-numero"  decimalPlaces="0" value="#{clienteBean.cliente.numeroTelefonico}"/>
-                        
-                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-                        
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+   
                     </p:panelGrid>
                     
                     <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
                     
-                     <p:commandButton value="Agregar" action="#{clienteBean.create()}" ajax="false"/>
-                        <p:linkButton value="Cancelar" href="index.xhtml"/>
+                        <p:commandButton value="Agregar" action="#{actividadTuristicaBean.create()}" ajax="false"/>
+                        <p:linkButton value="Cancelar" href="IndexActividadTuristica.xhtml"/>
                 </p:panel>
             </h:form>
              </p:layoutUnit>

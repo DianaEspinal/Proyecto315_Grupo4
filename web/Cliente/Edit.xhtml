@@ -16,8 +16,8 @@ and open the template in the editor.
         
         <p:layout fullPage="true">
 
-            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
-                Header
+            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true" style="text-align: center; display: flex; align-items: center; font-size: 40px;">
+                SISTEMA DE GESTION DE RESERVA DE PAQUETES TURISTICOS
             </p:layoutUnit>
 
             <p:layoutUnit position="south" size="100" resizable="true" closable="true" collapsible="true">
@@ -34,7 +34,7 @@ and open the template in the editor.
                         <p:menuitem value="Mantenimiento" />
                          </p:submenu>
                          <p:submenu label="Actividad Turistica">
-                        <p:menuitem value="Mantenimiento" />
+                        <p:menuitem value="Mantenimiento" outcome="/ActividadTuristica/IndexActividadTuristica"/>
                          </p:submenu>
                          <p:submenu label="Destino Turistico">
                         <p:menuitem value="Mantenimiento" />
@@ -52,34 +52,55 @@ and open the template in the editor.
             <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
               <h:form>
                     <p:panel header="Editar Registro">
-                        <p:panelGrid columns="5" layout="grid">
+                        <p:panelGrid columns="1" layout="grid">
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                            
                             <p:outputLabel for="Cliente-title" value="Nombres:"/>
                             <p:inputText 
                                 id="Cliente-title" 
                                 value="#{clienteBean.cliente.nombres}" />
+                            
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                            
                              <p:outputLabel for="Cliente-apellidos" value="Apellidos:"/>
                             <p:inputText 
                                 id="Cliente-apellidos" 
                                 value="#{clienteBean.cliente.apellidos}" />
+                            
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                            
                              <p:outputLabel for="Cliente-identificacion" value="Identificacion:"/>
                             <p:inputNumber 
                                 id="Cliente-identificacion" 
                                 decimalPlaces="0" 
                                 value="#{clienteBean.cliente.identificacion}" />
+                            
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                            
                             <p:outputLabel for="Cliente-correo" value="Correo electronico"/>
                             <p:inputText 
                                 id="Cliente-correo" 
                                 value="#{clienteBean.cliente.correoElectronico}" />
+                            
+                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                            
                             <p:outputLabel for="Cliente-numero" value="Numero telefonico"/>
                              <p:inputNumber 
                                 id="Cliente-numero" 
                                 decimalPlaces="0" 
                                 value="#{clienteBean.cliente.numeroTelefonico}" />
-                            <p:commandButton value="Guardar Modificaciones" 
-                                             action="#{clienteBean.edit}" ajax="false"/>
+                             
+                             <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                             
+                            
+                        </p:panelGrid>
+                        
+                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                        
+                        <p:commandButton value="Guardar" 
+                                         action="#{clienteBean.edit}" ajax="false"/>
                             <p:linkButton value="Cancelar" href="indexCliente.xhtml" />
                             <p:inputText type="hidden" value="#{clienteBean.cliente.clienteId}" />
-                        </p:panelGrid>
                     </p:panel>
                 </h:form>
 
