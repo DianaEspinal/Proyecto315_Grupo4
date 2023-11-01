@@ -20,7 +20,7 @@
             </p:layoutUnit>
 
             <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
-                <h:form>
+                 <h:form>
                 <p:menu>
                     <p:submenu label="Cliente">
                         <p:menuitem value="Mantenimiento" outcome="/Cliente/indexCliente" />
@@ -48,45 +48,55 @@
                 Proyecto Programacion III
             </p:layoutUnit>
 
+
             <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
 
-                <p:linkButton value="Agregar Actividad Turistica" href="Create.xhtml"/>
+                <p:linkButton value="Agregar Alojamiento" href="Create.xhtml"/>
                               <br /><br />
                               <p:growl id ="growl"/>
-                              <p:dataTable var="actividadTuristica" value="#{actividadTuristicaBean.actividadesTuristicas}" paginator="true" rows="5">
+                              
+                              <p:dataTable var="Alojamiento" value="#{alojamientoBean.alojamientos}" paginator="true" rows="7">
+                                  
                                   <p:column>
                                       <f:facet name="header">
                                           <h:outputText value="Id"/>
                                       </f:facet>
-                                      <h:outputText value="#{actividadTuristica.actividadTuristicaId}"/>
+                                      <h:outputText value="#{Alojamiento.alojamientoId}"/>
                                   </p:column>
+                                  
                                   <p:column>
                                       <f:facet name="header">
-                                          <h:outputText value="Nombre de Actividad Turistica"/>
+                                          <h:outputText value="Nombre de Hotel"/>
                                       </f:facet>
-                                      <h:outputText value="#{actividadTuristica.nombreActividad}"/>
+                                      <h:outputText value="#{Alojamiento.nombreHotel}"/>
                                   </p:column>
                                    <p:column>
                                       <f:facet name="header">
-                                          <h:outputText value="Descripción"/>
+                                          <h:outputText value="Habitaciones Requeridas"/>
                                       </f:facet>
-                                       <h:outputText value="#{actividadTuristica.descripcion}"/>
+                                       <h:outputText value="#{Alojamiento.habitacionesRequeridas}"/>
                                   </p:column>
                                   <p:column>
                                       <f:facet name="header">
-                                          <h:outputText value="Precio"/>
+                                          <h:outputText value="Precio Habitacion"/>
                                       </f:facet>
-                                      <h:outputText value="#{actividadTuristica.precio}"/>
+                                      <h:outputText value="#{Alojamiento.precioHabitacion}"/>
+                                  </p:column>
+                                  <p:column>
+                                      <f:facet name="header">
+                                          <h:outputText value="Tipo de Habitacion"/>
+                                      </f:facet>
+                                      <h:outputText value="#{Alojamiento.tipoHabitacion}"/>
                                   </p:column>
                                   <p:column>
                                   <f:facet  name="header">
                                        <h:outputText value="Acciones"/>
                                   </f:facet>
                                   <p:linkButton value="Editar" outcome="Edit">
-                                      <f:param name="actividadTuristica_id" value="#{actividadTuristica.actividadTuristicaId}"/>
+                                      <f:param name="alojamiento_id" value="#{Alojamiento.alojamientoId}"/>
                                   </p:linkButton>
                                   <p:linkButton value="Eliminar" outcome="Delete">
-                                      <f:param name="actividadTuristica_id" value="#{actividadTuristica.actividadTuristicaId}"/>
+                                      <f:param name="alojamiento_id" value="#{Alojamiento.alojamientoId}"/>
                                   </p:linkButton>
                                   </p:column>
                               </p:dataTable>
@@ -95,3 +105,6 @@
         </p:layout>
     </h:body>
 </html>
+
+
+

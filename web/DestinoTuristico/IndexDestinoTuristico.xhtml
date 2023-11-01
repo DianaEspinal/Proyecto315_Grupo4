@@ -48,45 +48,44 @@
                 Proyecto Programacion III
             </p:layoutUnit>
 
+
             <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
 
-                <p:linkButton value="Agregar Actividad Turistica" href="Create.xhtml"/>
+                <p:linkButton value="Agregar Destino Turistico" href="Create.xhtml"/>
                               <br /><br />
                               <p:growl id ="growl"/>
-                              <p:dataTable var="actividadTuristica" value="#{actividadTuristicaBean.actividadesTuristicas}" paginator="true" rows="5">
+                              
+                              <p:dataTable var="DestinoTuristico" value="#{destinoTuristicoBean.destinoTuristicos}" paginator="true" rows="5">
+                                  
                                   <p:column>
                                       <f:facet name="header">
                                           <h:outputText value="Id"/>
                                       </f:facet>
-                                      <h:outputText value="#{actividadTuristica.actividadTuristicaId}"/>
+                                      <h:outputText value="#{DestinoTuristico.destinoTuristicoId}"/>
                                   </p:column>
+                                  
                                   <p:column>
                                       <f:facet name="header">
-                                          <h:outputText value="Nombre de Actividad Turistica"/>
+                                          <h:outputText value="Nombre"/>
                                       </f:facet>
-                                      <h:outputText value="#{actividadTuristica.nombreActividad}"/>
+                                      <h:outputText value="#{DestinoTuristico.nombre}"/>
                                   </p:column>
                                    <p:column>
                                       <f:facet name="header">
-                                          <h:outputText value="Descripción"/>
+                                          <h:outputText value="Descripcion"/>
                                       </f:facet>
-                                       <h:outputText value="#{actividadTuristica.descripcion}"/>
+                                       <h:outputText value="#{DestinoTuristico.descripcion}"/>
                                   </p:column>
-                                  <p:column>
-                                      <f:facet name="header">
-                                          <h:outputText value="Precio"/>
-                                      </f:facet>
-                                      <h:outputText value="#{actividadTuristica.precio}"/>
-                                  </p:column>
+     
                                   <p:column>
                                   <f:facet  name="header">
                                        <h:outputText value="Acciones"/>
                                   </f:facet>
                                   <p:linkButton value="Editar" outcome="Edit">
-                                      <f:param name="actividadTuristica_id" value="#{actividadTuristica.actividadTuristicaId}"/>
+                                      <f:param name="destinoTuristico_id" value="#{DestinoTuristico.destinoTuristicoId}"/>
                                   </p:linkButton>
                                   <p:linkButton value="Eliminar" outcome="Delete">
-                                      <f:param name="actividadTuristica_id" value="#{actividadTuristica.actividadTuristicaId}"/>
+                                      <f:param name="destinoTuristico_id" value="#{DestinoTuristico.destinoTuristicoId}"/>
                                   </p:linkButton>
                                   </p:column>
                               </p:dataTable>

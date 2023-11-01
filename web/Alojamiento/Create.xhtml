@@ -4,10 +4,11 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-
+        
         <p:layout fullPage="true">
 
             <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true" style="text-align: center; display: flex; align-items: center; font-size: 40px;">
@@ -19,9 +20,9 @@
             </p:layoutUnit>
 
             <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
-                 <h:form>
+                <h:form>
                 <p:menu>
-                    <p:submenu label="Cliente">
+                     <p:submenu label="Cliente">
                         <p:menuitem value="Mantenimiento" outcome="/Cliente/indexCliente" />
                          </p:submenu>
                           <p:submenu label="Alojamiento">
@@ -40,14 +41,29 @@
                         <p:menuitem value="Mantenimiento" outcome="/Usuarios/IndexUsuarios"/>
                     </p:submenu>
                 </p:menu>
-                      </h:form>
+                    </h:form>
             </p:layoutUnit>
-
-            <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
-                Proyecto Programacion III
-            </p:layoutUnit>
-
-        </p:layout>
-
-    </h:body>
+            
+<p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
+    <h:form>
+        <p:panel header="Agregar Alojamiento">
+            <p:panelGrid columns="1" layout="grid">
+                <p:outputLabel for="Alojamiento-title" value="Nombre de Hotel:"/>
+                <p:inputText id="Alojamiento-title" value="#{alojamientoBean.alojamiento.nombreHotel}"/>
+                <p:outputLabel for="Alojamiento-habitacionesRequeridas" value="Habitaciones Requeridas:"/>
+                <p:inputNumber id="Alojamiento-habitacionesRequeridas" decimalPlaces="0" value="#{alojamientoBean.alojamiento.habitacionesRequeridas}"/>
+                <p:outputLabel for="Alojamiento-precioHabitacion" value="Precio de la Habitacion:"/>
+                <p:inputNumber id="Alojamiento-precioHabitacion" decimalPlaces="2" value="#{alojamientoBean.alojamiento.precioHabitacion}"/>
+                <p:outputLabel for="Alojamiento-tipoHabitacion" value=" Tipo de Habitacion:"/>
+                <p:inputText id="Alojamiento-tipoHabitacion" value="#{alojamientoBean.alojamiento.tipoHabitacion}"/>
+                
+            </p:panelGrid>
+                <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                <p:commandButton value="Agregar" action="#{alojamientoBean.create()}" ajax="false"/>
+                <p:linkButton value="Cancelar" href="indexAlojamiento.xhtml"/>
+        </p:panel>
+    </h:form>
+</p:layoutUnit>
+           </p:layout>
+  </h:body>
 </html>

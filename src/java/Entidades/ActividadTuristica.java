@@ -43,12 +43,12 @@ public class ActividadTuristica implements Serializable {
       
     @NotNull
     @Column(name="precio")
-    private Integer precio;
+    private Double precio;
 
     public ActividadTuristica() {
     }
 
-    public ActividadTuristica(long actividadTuristicaId, String nombreActividad, String descripcion, Integer precio) {
+    public ActividadTuristica(long actividadTuristicaId, String nombreActividad, String descripcion, Double precio) {
         this.actividadTuristicaId = actividadTuristicaId;
         this.descripcion = descripcion;
         this.nombreActividad = nombreActividad;
@@ -79,11 +79,11 @@ public class ActividadTuristica implements Serializable {
         this.nombreActividad = nombreActividad;
     }
 
-    public Integer getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Integer precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
     

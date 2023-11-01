@@ -31,13 +31,13 @@ and open the template in the editor.
                         <p:menuitem value="Mantenimiento" outcome="/Cliente/indexCliente" />
                          </p:submenu>
                           <p:submenu label="Alojamiento">
-                        <p:menuitem value="Mantenimiento" />
+                        <p:menuitem value="Mantenimiento" outcome="/Alojamiento/indexAlojamiento"/>
                          </p:submenu>
                          <p:submenu label="Actividad Turistica">
                         <p:menuitem value="Mantenimiento" outcome="/ActividadTuristica/IndexActividadTuristica"/>
                          </p:submenu>
                          <p:submenu label="Destino Turistico">
-                        <p:menuitem value="Mantenimiento" />
+                        <p:menuitem value="Mantenimiento" outcome="/DestinoTuristico/IndexDestinoTuristico"/>
                          </p:submenu>
                          <p:submenu label="Reserva">
                         <p:menuitem value="Mantenimiento" />
@@ -54,22 +54,14 @@ and open the template in the editor.
                 <p:panel header="Modificar Actividad Turistica">
                     <p:panelGrid columns="1" layout="grid">
                         
-                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-                        
                         <p:outputLabel for="actividadTuristica-title" value="Nombre de Actividad: "/>
                         <p:inputText id="actividadTuristica-title" value="#{actividadTuristicaBean.actividadTuristica.nombreActividad}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
 
                         <p:outputLabel for="actividadTuristica-descripcion" value="Descripción: "/>
                         <p:inputText id="actividadTuristica-descripcion" value="#{actividadTuristicaBean.actividadTuristica.descripcion}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
 
                         <p:outputLabel for="actividadTuristica-precio" value="Precio de la actividad: "/>
-                        <p:inputNumber id="actividadTuristica-precio"  decimalPlaces="0" value="#{actividadTuristicaBean.actividadTuristica.precio}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                        <p:inputNumber id="actividadTuristica-precio"  decimalPlaces="2" value="#{actividadTuristicaBean.actividadTuristica.precio}" />
    
                     </p:panelGrid>
                     
