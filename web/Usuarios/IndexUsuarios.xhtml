@@ -38,73 +38,56 @@
                         <p:menuitem value="Mantenimiento" />
                          </p:submenu>
                          <p:submenu label="Usuarios">
-                        <p:menuitem value="Mantenimiento" outcome="/Usuarios/IndexUsuarios"/>
+                             <p:menuitem value="Mantenimiento" outcome="/Usuarios/IndexUsuarios"/>
                     </p:submenu>
                 </p:menu>
                       </h:form>
             </p:layoutUnit>
-
-            <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
+             
+               <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
                 Proyecto Programacion III
             </p:layoutUnit>
 
             <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
 
-                <p:linkButton value="Agregar Cliente" href="Create.xhtml"/>
+                <p:linkButton value="Agregar Usuario" href="Create.xhtml"/>
                               <br /><br />
                               <p:growl id ="growl"/>
-                              <p:dataTable var="Cliente" value="#{clienteBean.clientes}" paginator="true" rows="7">
+                              <p:dataTable var="Usuarios" value="#{usuariosBean.usuarioAdministrador}" paginator="true" rows="5">
                                   <p:column>
                                       <f:facet name="header">
                                           <h:outputText value="Id"/>
                                       </f:facet>
-                                      <h:outputText value="#{Cliente.clienteId}"/>
+                                      <h:outputText value="#{Usuarios.usuarioId}"/>
                                   </p:column>
                                   <p:column>
                                       <f:facet name="header">
-                                          <h:outputText value="Nombre"/>
+                                          <h:outputText value="Usuario:"/>
                                       </f:facet>
-                                      <h:outputText value="#{Cliente.nombres}"/>
+                                      <h:outputText value="#{Usuarios.usuario}"/>
                                   </p:column>
                                    <p:column>
                                       <f:facet name="header">
-                                          <h:outputText value="Apellidos"/>
+                                          <h:outputText value="Contraseña"/>
                                       </f:facet>
-                                       <h:outputText value="#{Cliente.apellidos}"/>
-                                  </p:column>
-                                  <p:column>
-                                      <f:facet name="header">
-                                          <h:outputText value="Identificación"/>
-                                      </f:facet>
-                                      <h:outputText value="#{Cliente.identificacion}"/>
-                                  </p:column>
-                                   <p:column>
-                                      <f:facet name="header">
-                                          <h:outputText value="Correo"/>
-                                      </f:facet>
-                                       <h:outputText value="#{Cliente.correoElectronico}"/>
-                                  </p:column>
-                                   <p:column>
-                                      <f:facet name="header">
-                                          <h:outputText value="Numero telefonico"/>
-                                      </f:facet>
-                                       <h:outputText value="#{Cliente.numeroTelefonico}"/>
+                                       <h:outputText value="#{Usuarios.contrasenia}"/>
                                   </p:column>
                                   <p:column>
                                   <f:facet  name="header">
                                        <h:outputText value="Acciones"/>
                                   </f:facet>
                                   <p:linkButton value="Editar" outcome="Edit">
-                                      <f:param name="cliente_id" value="#{Cliente.clienteId}"/>
+                                      <f:param name="usuario_id" value="#{Usuarios.usuarioId}"/>
                                   </p:linkButton>
                                   <p:linkButton value="Eliminar" outcome="Delete">
-                                      <f:param name="cliente_id" value="#{Cliente.clienteId}"/>
+                                      <f:param name="usuario_id" value="#{Usuarios.usuarioId}"/>
                                   </p:linkButton>
                                   </p:column>
                               </p:dataTable>
             </p:layoutUnit>
 
         </p:layout>
-    </h:body>
+             
+             </h:body>
+    
 </html>
-

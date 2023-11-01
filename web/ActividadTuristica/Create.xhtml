@@ -43,7 +43,7 @@ and open the template in the editor.
                         <p:menuitem value="Mantenimiento" />
                          </p:submenu>
                          <p:submenu label="Usuarios">
-                        <p:menuitem value="Mantenimiento" />
+                        <p:menuitem value="Mantenimiento" outcome="/Usuarios/IndexUsuarios"/>
                     </p:submenu>
                 </p:menu>
                     </h:form>
@@ -56,18 +56,12 @@ and open the template in the editor.
                     <p:panelGrid columns="1" layout="grid">
                         <p:outputLabel for="actividadTuristica-title" value="Nombre de Actividad: "/>
                         <p:inputText id="actividadTuristica-title" value="#{actividadTuristicaBean.actividadTuristica.nombreActividad}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
 
                         <p:outputLabel for="actividadTuristica-descripcion" value="Descripción: "/>
                         <p:inputText id="actividadTuristica-descripcion" value="#{actividadTuristicaBean.actividadTuristica.descripcion}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
 
                         <p:outputLabel for="actividadTuristica-precio" value="Precio de la actividad: "/>
                         <p:inputNumber id="actividadTuristica-precio"  decimalPlaces="0" value="#{actividadTuristicaBean.actividadTuristica.precio}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
    
                     </p:panelGrid>
                     

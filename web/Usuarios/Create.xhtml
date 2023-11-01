@@ -13,7 +13,6 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        
         <p:layout fullPage="true">
 
             <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true" style="text-align: center; display: flex; align-items: center; font-size: 40px;">
@@ -49,39 +48,26 @@ and open the template in the editor.
                     </h:form>
             </p:layoutUnit>
             
-            <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
+             <p:layoutUnit position="center" size="100" resizable="true" closable="true" collapsible="true">
              <h:form>
-                <p:panel header="Modificar Actividad Turistica">
+                <p:panel header="Agregar usuario">
+ 
                     <p:panelGrid columns="1" layout="grid">
-                        
-                        <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-                        
-                        <p:outputLabel for="actividadTuristica-title" value="Nombre de Actividad: "/>
-                        <p:inputText id="actividadTuristica-title" value="#{actividadTuristicaBean.actividadTuristica.nombreActividad}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                        <p:outputLabel for="usuario-title" value="Usuario: "/>
+                        <p:inputText id="usuario-title" value="#{usuariosBean.usuario.usuario}" />
 
-                        <p:outputLabel for="actividadTuristica-descripcion" value="Descripción: "/>
-                        <p:inputText id="actividadTuristica-descripcion" value="#{actividadTuristicaBean.actividadTuristica.descripcion}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-
-                        <p:outputLabel for="actividadTuristica-precio" value="Precio de la actividad: "/>
-                        <p:inputNumber id="actividadTuristica-precio"  decimalPlaces="0" value="#{actividadTuristicaBean.actividadTuristica.precio}" />
-                        
-                            <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
-   
+                        <p:outputLabel for="usuario-password" value="Contraseña: "/>
+                        <p:inputText id="usuario-password" value="#{usuariosBean.usuario.contrasenia}" />
+                            
                     </p:panelGrid>
-                    
                     <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
+                    <p:commandButton value="Agregar" action="#{usuariosBean.create()}" ajax="false"/>
+                        <p:linkButton value="Cancelar" href="IndexUsuarios.xhtml"/>
                     
-                        <p:commandButton value="Guardar" action="#{actividadTuristicaBean.edit}" ajax="false"/>
-                        <p:linkButton value="Cancelar" href="IndexActividadTuristica.xhtml"/>
-                        <p:inputText type="hidden" value="#{actividadTuristicaBean.actividadTuristica.actividadTuristicaId}" />
                 </p:panel>
             </h:form>
              </p:layoutUnit>
            </p:layout>
-  </h:body>
+    </h:body>
 </html>
 

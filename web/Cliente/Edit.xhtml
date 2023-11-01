@@ -43,7 +43,7 @@ and open the template in the editor.
                         <p:menuitem value="Mantenimiento" />
                          </p:submenu>
                          <p:submenu label="Usuarios">
-                        <p:menuitem value="Mantenimiento" />
+                        <p:menuitem value="Mantenimiento" outcome="/Usuarios/IndexUsuarios"/>
                     </p:submenu>
                 </p:menu>
                       </h:form>
@@ -97,8 +97,7 @@ and open the template in the editor.
                         
                         <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
                         
-                        <p:commandButton value="Guardar" 
-                                         action="#{clienteBean.edit}" ajax="false"/>
+                        <p:commandButton value="Guardar" action="#{clienteBean.edit}" ajax="false"/>
                             <p:linkButton value="Cancelar" href="indexCliente.xhtml" />
                             <p:inputText type="hidden" value="#{clienteBean.cliente.clienteId}" />
                     </p:panel>
