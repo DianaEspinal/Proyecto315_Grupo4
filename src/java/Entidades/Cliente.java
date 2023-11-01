@@ -41,8 +41,9 @@ public class Cliente implements Serializable {
     private String correoElectronico;
     
     @NotNull
+    @Size(min=1,max=10)
     @Column(name="identificacion")
-    private Integer identificacion;
+    private String identificacion;
     
     @NotNull
     @Size(min=1,max=100)
@@ -50,13 +51,14 @@ public class Cliente implements Serializable {
     private String nombres;
     
     @NotNull
+    @Size(min=1,max=9)
     @Column(name="numeroTelefonico")
-    private Integer numeroTelefonico;
+    private String numeroTelefonico;
 
     public Cliente() {
     }
 
-    public Cliente(long clienteId, String apellidos, String correoElectronico, Integer identificacion, String nombres, Integer numeroTelefonico) {
+    public Cliente(long clienteId, String apellidos, String correoElectronico, String identificacion, String nombres, String numeroTelefonico) {
         this.clienteId = clienteId;
         this.apellidos = apellidos;
         this.correoElectronico = correoElectronico;
@@ -89,11 +91,11 @@ public class Cliente implements Serializable {
         this.correoElectronico = correoElectronico;
     }
 
-    public Integer getIdentificacion() {
+    public String getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(Integer identificacion) {
+    public void setIdentificacion(String identificacion) {
         this.identificacion = identificacion;
     }
 
@@ -105,11 +107,11 @@ public class Cliente implements Serializable {
         this.nombres = nombres;
     }
 
-    public Integer getNumeroTelefonico() {
+    public String getNumeroTelefonico() {
         return numeroTelefonico;
     }
 
-    public void setNumeroTelefonico(Integer numeroTelefonico) {
+    public void setNumeroTelefonico(String numeroTelefonico) {
         this.numeroTelefonico = numeroTelefonico;
     }
     

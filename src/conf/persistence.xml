@@ -3,7 +3,7 @@
   <persistence-unit name="GRUPO4_PRN315PU" transaction-type="JTA">
     <jta-data-source>jdbc/baseproyecto_2023</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
-    <validation-mode>CALLBACK</validation-mode>
+    <validation-mode>NONE</validation-mode>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>

@@ -59,16 +59,12 @@ and open the template in the editor.
                                 id="Cliente-title" 
                                 value="#{clienteBean.cliente.nombres}" />
                             
-                             <p:outputLabel for="Cliente-apellidos" value="Apellidos:"/>
-                            <p:inputText 
-                                id="Cliente-apellidos" 
-                                value="#{clienteBean.cliente.apellidos}" />
+                            <p:outputLabel for="Cliente-apellidos" value="Apellidos:"/>
+                            <p:inputText id="Cliente-apellidos" value="#{clienteBean.cliente.apellidos}"/>
                             
-                             <p:outputLabel for="Cliente-identificacion" value="Identificacion:"/>
-                            <p:inputNumber 
-                                id="Cliente-identificacion" 
-                                decimalPlaces="0" 
-                                value="#{clienteBean.cliente.identificacion}" />
+                            
+                            <p:outputLabel for="Cliente-identificacion" value="Identificacion:"/>
+                            <p:inputText id="Cliente-identificacion"  maxlength="10" onkeyup="formatoDUI(this)" value="#{clienteBean.cliente.identificacion}"/>
                             
                             <p:outputLabel for="Cliente-correo" value="Correo electronico"/>
                             <p:inputText 
@@ -76,10 +72,34 @@ and open the template in the editor.
                                 value="#{clienteBean.cliente.correoElectronico}" />
                             
                             <p:outputLabel for="Cliente-numero" value="Numero telefonico"/>
-                             <p:inputNumber 
-                                id="Cliente-numero" 
-                                decimalPlaces="0" 
-                                value="#{clienteBean.cliente.numeroTelefonico}" />
+                             <p:inputText id="Cliente-numero" maxlength="9" onkeyup="formatoNumeroTelefono(this)" value="#{clienteBean.cliente.numeroTelefonico}" />
+                             
+                        <script>
+                        function formatoNumeroTelefono(input) {
+                        // Eliminando cualquier caracter que no sea un número
+                        var numeroTelefono = input.value.replace(/\D/g, '');
+
+                        // Aplicando el formato (XXXX-XXXX) si hay al menos 4 dígitos
+                        if (numeroTelefono.length >= 4) {
+                        numeroTelefono = numeroTelefono.substring(0, 4) + '-' + numeroTelefono.substring(4);
+                        }
+
+                        // Asigna el valor formateado de vuelta al campo
+                        input.value = numeroTelefono;
+                        }
+                        function formatoDUI(input) {
+                        // Eliminando cualquier caracter que no sea un número
+                        var numeroDUI = input.value.replace(/\D/g, '');
+
+                        // Aplicando el formato (XXXX-XXXX) si hay al menos 4 dígitos
+                        if (numeroDUI.length >= 8) {
+                        numeroDUI = numeroDUI.substring(0, 8) + '-' + numeroDUI.substring(8);
+                        }
+
+                        // Asigna el valor formateado de vuelta al campo
+                        input.value = numeroDUI;
+                        }
+                        </script>
                              
                              <h:outputText value="&#10;" escape="false" style="white-space: pre;"/> <!-- Salto de línea -->
                              
