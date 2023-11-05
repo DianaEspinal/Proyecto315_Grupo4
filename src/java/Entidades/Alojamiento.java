@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -38,6 +39,7 @@ import javax.validation.constraints.Size;
     private String habitacionesRequeridas;
     
     @NotNull
+    @Min(value = 0, message = "El precio debe ser mayor o igual que 0")
     @Column(name="precioHabitacion")
     private Double precioHabitacion;
     

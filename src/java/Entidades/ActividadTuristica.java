@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -42,6 +43,7 @@ public class ActividadTuristica implements Serializable {
     private String descripcion;
       
     @NotNull
+    @Min(value = 0, message = "El precio debe ser mayor o igual que 0")
     @Column(name="precio")
     private Double precio;
 

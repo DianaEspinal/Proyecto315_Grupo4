@@ -19,7 +19,7 @@
                 Footer
             </p:layoutUnit>
 
-            <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
+            <p:layoutUnit position="west" size="230" header="Menú" resizable="true" collapsible="true">
                  <h:form>
                 <p:menu>
                     <p:submenu label="Cliente">
@@ -54,41 +54,41 @@
                 <p:linkButton value="Agregar Alojamiento" href="Create.xhtml"/>
                               <br /><br />
                               <p:growl id ="growl"/>
-                              
+                              Detalle de registros guardados:
                               <p:dataTable var="Alojamiento" value="#{alojamientoBean.alojamientos}" paginator="true" rows="7">
                                   
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 5%;">
                                       <f:facet name="header">
                                           <h:outputText value="Id"/>
                                       </f:facet>
                                       <h:outputText value="#{Alojamiento.alojamientoId}"/>
                                   </p:column>
                                   
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 30%;">
                                       <f:facet name="header">
                                           <h:outputText value="Nombre de Hotel"/>
                                       </f:facet>
                                       <h:outputText value="#{Alojamiento.nombreHotel}"/>
                                   </p:column>
-                                   <p:column>
+                                   <p:column style="text-align: center; width: 15%;">
                                       <f:facet name="header">
                                           <h:outputText value="Habitaciones Requeridas"/>
                                       </f:facet>
                                        <h:outputText value="#{Alojamiento.habitacionesRequeridas}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 15%;">
                                       <f:facet name="header">
-                                          <h:outputText value="Precio Habitacion"/>
+                                          <h:outputText value="Precio Habitacion ($)"/>
                                       </f:facet>
                                       <h:outputText value="#{Alojamiento.precioHabitacion}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 15%;">
                                       <f:facet name="header">
                                           <h:outputText value="Tipo de Habitacion"/>
                                       </f:facet>
                                       <h:outputText value="#{Alojamiento.tipoHabitacion}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 20%;">
                                   <f:facet  name="header">
                                        <h:outputText value="Acciones"/>
                                   </f:facet>

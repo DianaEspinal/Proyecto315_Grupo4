@@ -19,7 +19,7 @@
                 Footer
             </p:layoutUnit>
 
-            <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
+            <p:layoutUnit position="west" size="230" header="Menú" resizable="true" collapsible="true">
                 <h:form>
                 <p:menu>
                      <p:submenu label="Cliente">
@@ -54,6 +54,7 @@
                 <p:inputNumber id="Alojamiento-habitacionesRequeridas" decimalPlaces="0" value="#{alojamientoBean.alojamiento.habitacionesRequeridas}"/>
                 <p:outputLabel for="Alojamiento-precioHabitacion" value="Precio de la Habitacion:"/>
                 <p:inputNumber id="Alojamiento-precioHabitacion" decimalPlaces="2" value="#{alojamientoBean.alojamiento.precioHabitacion}"/>
+                <p:message for="Alojamiento-precioHabitacion" />
                 <p:outputLabel for="Alojamiento-tipoHabitacion" value=" Tipo de Habitacion:"/>
                 <p:inputText id="Alojamiento-tipoHabitacion" value="#{alojamientoBean.alojamiento.tipoHabitacion}"/>
                 

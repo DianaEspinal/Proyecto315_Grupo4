@@ -19,7 +19,7 @@
                 Footer
             </p:layoutUnit>
 
-            <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
+            <p:layoutUnit position="west" size="230" header="Menú" resizable="true" collapsible="true">
                 <h:form>
                 <p:menu>
                     <p:submenu label="Cliente">
@@ -53,26 +53,27 @@
                 <p:linkButton value="Agregar Usuario" href="Create.xhtml"/>
                               <br /><br />
                               <p:growl id ="growl"/>
+                              Detalle de registros guardados:
                               <p:dataTable var="Usuarios" value="#{usuariosBean.usuarioAdministrador}" paginator="true" rows="5">
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 10%;">
                                       <f:facet name="header">
                                           <h:outputText value="Id"/>
                                       </f:facet>
                                       <h:outputText value="#{Usuarios.usuarioId}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 35%;">
                                       <f:facet name="header">
                                           <h:outputText value="Usuario:"/>
                                       </f:facet>
                                       <h:outputText value="#{Usuarios.usuario}"/>
                                   </p:column>
-                                   <p:column>
+                                   <p:column style="text-align: center; width: 35%;">
                                       <f:facet name="header">
                                           <h:outputText value="Contraseña"/>
                                       </f:facet>
                                        <h:outputText value="#{Usuarios.contrasenia}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 20%;">
                                   <f:facet  name="header">
                                        <h:outputText value="Acciones"/>
                                   </f:facet>

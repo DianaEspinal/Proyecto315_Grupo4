@@ -24,7 +24,7 @@ and open the template in the editor.
                 Footer
             </p:layoutUnit>
 
-            <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
+            <p:layoutUnit position="west" size="230" header="Menú" resizable="true" collapsible="true">
                 <h:form>
                 <p:menu>
                      <p:submenu label="Cliente">
@@ -62,6 +62,7 @@ and open the template in the editor.
 
                         <p:outputLabel for="actividadTuristica-precio" value="Precio de la actividad: "/>
                         <p:inputNumber id="actividadTuristica-precio"  decimalPlaces="2" value="#{actividadTuristicaBean.actividadTuristica.precio}" />
+                        <p:message for="actividadTuristica-precio" />
    
                     </p:panelGrid>
                     

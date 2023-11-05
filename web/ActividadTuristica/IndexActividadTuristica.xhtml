@@ -19,7 +19,8 @@
                 Footer
             </p:layoutUnit>
 
-            <p:layoutUnit position="west" size="230" header="left" resizable="true" collapsible="true">
+            <p:layoutUnit position="west" size="230" header="Menú" resizable="true" collapsible="true">
+                
                 <h:form>
                 <p:menu>
                     <p:submenu label="Cliente">
@@ -53,32 +54,33 @@
                 <p:linkButton value="Agregar Actividad Turistica" href="Create.xhtml"/>
                               <br /><br />
                               <p:growl id ="growl"/>
+                              Detalle de registros guardados:
                               <p:dataTable var="actividadTuristica" value="#{actividadTuristicaBean.actividadesTuristicas}" paginator="true" rows="5">
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 5%;">
                                       <f:facet name="header">
                                           <h:outputText value="Id"/>
                                       </f:facet>
                                       <h:outputText value="#{actividadTuristica.actividadTuristicaId}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 30%;">
                                       <f:facet name="header">
                                           <h:outputText value="Nombre de Actividad Turistica"/>
                                       </f:facet>
                                       <h:outputText value="#{actividadTuristica.nombreActividad}"/>
                                   </p:column>
-                                   <p:column>
+                                   <p:column style="text-align: center; width: 30%;">
                                       <f:facet name="header">
                                           <h:outputText value="Descripción"/>
                                       </f:facet>
                                        <h:outputText value="#{actividadTuristica.descripcion}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 15%;">
                                       <f:facet name="header">
-                                          <h:outputText value="Precio"/>
+                                          <h:outputText value="Precio ($)"/>
                                       </f:facet>
                                       <h:outputText value="#{actividadTuristica.precio}"/>
                                   </p:column>
-                                  <p:column>
+                                  <p:column style="text-align: center; width: 20%;">
                                   <f:facet  name="header">
                                        <h:outputText value="Acciones"/>
                                   </f:facet>
